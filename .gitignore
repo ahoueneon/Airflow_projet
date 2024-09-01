@@ -1,0 +1,8 @@
+# Ignorer les dossiers de logs Airflow
+logs/
+
+# Ignorer les fichiers logs générés
+*.log
+
+# Ignorer les fichiers symboliques
+scheduler/latest
