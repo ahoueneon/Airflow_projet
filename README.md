@@ -141,4 +141,4 @@ docker rm my-airflow-container
 docker-compose up -d
 * Avec un fichier yaml, si vous l'avez fait pour lancer le service Airflow avec vos configurations 
 
-* DAns le fichier docker-compose yaml, il a fallu integrer
+* En suivant le processus, tout devreait bien se passer.
