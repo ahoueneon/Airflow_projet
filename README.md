@@ -27,7 +27,7 @@ Certains répertoires du conteneur sont montés, ce qui signifie que leur conten
 
 ./logs- contient les journaux de l'exécution des tâches et du planificateur.
 
-./config- vous pouvez ajouter un analyseur de journaux personnalisé ou ajouter airflow_local_settings.pypour configurer la politique de cluster.
+./config- vous pouvez ajouter un analyseur de journaux personnalisé ou ajouter airflow_local_settings.py pour configurer la politique de cluster.
 
 ./plugins- vous pouvez mettre vos plugins personnalisés ici.
 
@@ -117,11 +117,11 @@ Ce fichier docker-compose.yml configure une instance Airflow complète avec Post
 docker build -t my-airflow-image .
 * docker build pour construire l'image
 * -t pour nommer l'image
-* . Indique que le dockerfile se trouve dans le fichier courant
+* . Indique que le dockerfile se trouve dans le repertoire courant
 
 docker run -d -p 8080:8080 --name my-airflow-container my-airflow-image
-* docker run pour exexuter un conteneur
-* -d execute le conteneur en mode décaché (en arriere plan)
+* docker run pour executer un conteneur
+* -d execute le conteneur en mode détaché (en arriere plan)
 * -p 8080:8080 mappe le port 8080 de l'hôte au port 8080 du conteneur (ajustez le port si nécessaire).
 * --name my-airflow-container donne un nom au conteneur, ici my-airflow-container
 * my-airflow-image est le nom de l'image à partir de laquelle le conteneur sera créé.
@@ -140,3 +140,5 @@ docker rm my-airflow-container
 
 docker-compose up -d
 * Avec un fichier yaml, si vous l'avez fait pour lancer le service Airflow avec vos configurations 
+
+* DAns le fichier docker-compose yaml, il a fallu integrer
