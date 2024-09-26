@@ -6,4 +6,4 @@ logs/
 
 # Ignorer les fichiers symboliques
 scheduler/latest
-Dossier_des_Fichiers/*
+# Dossier_des_Fichiers/*
