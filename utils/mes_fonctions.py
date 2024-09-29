@@ -1,20 +1,13 @@
 
 import pandas as pd
 import random
-from datetime import datetime
+from datetime import datetime 
 import os
-# from faker import Faker
-
-# def verifier_faker():
-#     from faker import Faker
-
-#     # Exemple de code utilisant Faker
-#     fake = Faker()
-#     print(fake.name())
+from faker import Faker 
 
 def generer_fichier():
-    # Créer une instance de Faker
-    from faker import Faker  
+    # # Créer une instance de Faker
+    # from faker import Faker  
     fake = Faker() 
 
     # Initialiser les listes de données
@@ -63,24 +56,24 @@ def generer_fichier():
     a = a.replace('/', '-') 
     a = a.replace(' ', '')
     a = a.replace(':','')
-    data['date_creation'] = a 
+    data['date_creation'] = a
      
-    old_path = "D:/BUREAU/infos/Projets_Personnels/Airflow_projet/Dossier_des_Fichiers/donnees_assurance_old.csv"
-    new_path = "D:/BUREAU/infos/Projets_Personnels/Airflow_projet/Dossier_des_Fichiers/donnees_assurance_new.csv"
+    old_path = "/opt/airflow/Dossier_des_Fichiers/donnees_assurance_old.csv"
+    new_path = "/opt/airflow/Dossier_des_Fichiers/donnees_assurance_new.csv"
     
     # Créer un DataFrame
     new = pd.DataFrame(data)
-    new.to_csv(new_path, index =False)
+    new.to_csv(new_path, index = False)
 
     if os.path.exists(old_path):
         old = pd.read_csv(old_path)
         old = pd.concat([new, old]).reset_index(drop=True)
         old.to_csv(old_path, index =False) 
-        # return old 
-    else: 
+        # return old   
+    else:                       
         old = new.copy()
         old.to_csv(old_path, index=False)
-        # return old  
+        # return old
 
-    ####### traitement des données 
+
 
